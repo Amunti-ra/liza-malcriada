@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GIF grower</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            font-family: "Comic Sans MS", sans-serif;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center; /* ← esto centra verticalmente los botones */
+            gap: 1rem;
+
+        }
+
+        #bigBtn {
+            font-size: 1rem;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: font-size 0.2s, padding 0.2s; /* animación suave */
+            font-family: "Comic Sans MS", sans-serif;
+        }
+
+        #msgBtn {
+            padding: 0.6rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            min-width: 55px;
+            font-family: "Comic Sans MS", sans-serif;
+        }
+
+        #message {
+
+            font-size: 55px;
+            font-family: "Comic Sans MS", sans-serif;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <p id="message"> Quieres ser mi cita de San Valentin?</p>
+
+    <img id="mainGif" src="minion-minion-loves.gif" alt="GIF">
+
+    <div class="buttons">
+        <button id="bigBtn" type="button">SI</button>
+
+        <button id="msgBtn" type="button">NO</button>
+    </div>
+    
+
+    
+
+    <script>
+        const bigBtn = document.getElementById('bigBtn');
+        const msgBtn = document.getElementById('msgBtn');
+        
+
+        const messages = [
+            "No",
+            "Segura?",
+            "Segurisima??",
+            "Hiper segura???",
+            "Pinkie promise?",
+            "No en serio, segura?",
+            "Piénsatelo...",
+            "Ultima oportunidad",
+            "Ultimisima oportunidad",
+            "Ya no es gracioso"
+        ];
+
+        let index = 0;
+        let fontSize = 1;
+        let padding = 1; // rem
+        const maxIndex = messages.length - 1;
+
+        msgBtn.addEventListener('click', () => {
+            msgBtn.textContent = messages[index];
+
+            if (index < maxIndex) {
+                fontSize *= 1.6;
+                padding *= 1.2;
+                bigBtn.style.fontSize = fontSize + "rem";
+                bigBtn.style.padding = `${padding}rem ${padding * 2}rem`;
+                index++;
+            }
+        });
+
+        bigBtn.addEventListener('click', () => {
+            location.href = 'pagina_liza_2.html';
+        });
+    </script>
+
+</body>
+</html>

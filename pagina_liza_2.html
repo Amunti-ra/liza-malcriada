@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Segunda Página</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* color de fondo */
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        img {
+            max-width: 80vw;
+            max-height: 60vh;
+            object-fit: contain;
+        }
+
+        #visibleText {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        #hiddenText {
+            font-size: 1.5rem;
+            color: #f0f0f0; /* mismo que el fondo, “invisible” */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GIF grande en el centro -->
+    <img src="fireworks-exploding-heart.gif" alt="GIF divertido">
+
+    <!-- Texto visible -->
+    <p id="visibleText">Lo sabía, soy irresistible 😏.</p>
+
+    <!-- Texto invisible -->
+    <p id="hiddenText">ZORRA!</p>
+    <p id="hiddenText">viva el capitalismo yankee.</p>
+
+</body>
+</html>
